@@ -1899,3 +1899,103 @@ Processing by DiariesController#show as HTML
 Completed 200 OK in 32ms (Views: 7.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/diaries/10" for ::1 at 2026-01-20 10:40:47 +0900
+Processing by DiariesController#show as HTML
+  Parameters: {"id" => "10"}
+  [1m[36mDiary Load (0.1ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" WHERE "diaries"."id" = 10 LIMIT 1 /*action='show',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/controllers/diaries_controller.rb:65:in 'DiariesController#set_diary'
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/show.html.erb within layouts/application
+  Rendered diaries/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 15.7ms | ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/diaries" for ::1 at 2026-01-20 10:40:51 +0900
+Processing by DiariesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/index.html.erb within layouts/application
+  [1m[36mDiary Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "diaries" LIMIT 1 /*action='index',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/views/diaries/index.html.erb:24
+  [1m[36mDiary Load (0.1ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" /*action='index',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/views/diaries/index.html.erb:25
+  Rendered diaries/index.html.erb within layouts/application (Duration: 8.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 11.8ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/diaries/10" for ::1 at 2026-01-20 10:40:53 +0900
+Processing by DiariesController#show as HTML
+  Parameters: {"id" => "10"}
+  [1m[36mDiary Load (0.2ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" WHERE "diaries"."id" = 10 LIMIT 1 /*action='show',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/controllers/diaries_controller.rb:65:in 'DiariesController#set_diary'
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/show.html.erb within layouts/application
+  Rendered diaries/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 3.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/diaries" for ::1 at 2026-01-20 10:40:54 +0900
+Processing by DiariesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/index.html.erb within layouts/application
+  [1m[36mDiary Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "diaries" LIMIT 1 /*action='index',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/views/diaries/index.html.erb:24
+  [1m[36mDiary Load (0.1ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" /*action='index',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/views/diaries/index.html.erb:25
+  Rendered diaries/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 8.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/diaries/10" for ::1 at 2026-01-20 10:40:55 +0900
+Processing by DiariesController#show as HTML
+  Parameters: {"id" => "10"}
+  [1m[36mDiary Load (0.4ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" WHERE "diaries"."id" = 10 LIMIT 1 /*action='show',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/controllers/diaries_controller.rb:65:in 'DiariesController#set_diary'
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/show.html.erb within layouts/application
+  Rendered diaries/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 8.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/diaries/10/edit" for ::1 at 2026-01-20 10:40:55 +0900
+Processing by DiariesController#edit as HTML
+  Parameters: {"id" => "10"}
+  [1m[36mDiary Load (0.3ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" WHERE "diaries"."id" = 10 LIMIT 1 /*action='edit',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/controllers/diaries_controller.rb:65:in 'DiariesController#set_diary'
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/edit.html.erb within layouts/application
+  Rendered diaries/_form.html.erb (Duration: 4.9ms | GC: 0.0ms)
+  Rendered diaries/edit.html.erb within layouts/application (Duration: 12.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 16.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/diaries/10" for ::1 at 2026-01-20 10:40:57 +0900
+Processing by DiariesController#show as HTML
+  Parameters: {"id" => "10"}
+  [1m[36mDiary Load (0.2ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" WHERE "diaries"."id" = 10 LIMIT 1 /*action='show',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/controllers/diaries_controller.rb:65:in 'DiariesController#set_diary'
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/show.html.erb within layouts/application
+  Rendered diaries/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/diaries" for ::1 at 2026-01-20 10:40:59 +0900
+Processing by DiariesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering diaries/index.html.erb within layouts/application
+  [1m[36mDiary Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "diaries" LIMIT 1 /*action='index',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/views/diaries/index.html.erb:24
+  [1m[36mDiary Load (0.3ms)[0m  [1m[34mSELECT "diaries".* FROM "diaries" /*action='index',application='FirstMytestApp',controller='diaries'*/[0m
+  ↳ app/views/diaries/index.html.erb:25
+  Rendered diaries/index.html.erb within layouts/application (Duration: 9.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 12.9ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
