@@ -1,24 +1,41 @@
-<nav aria-label="breadcrumb" class="mb-4">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to "一覧", diaries_path, class: "text-decoration-none" %></li>
-    <li class="breadcrumb-item active"><%= @diary.title %></li>
-  </ol>
-</nav>
+<p style="color: green"><%= notice %></p>
 
-<div class="diary-content py-3">
-  <h1 class="display-5 fw-bold text-dark mb-4"><%= @diary.title %></h1>
-  
-  <div class="p-4 bg-white border-start border-primary border-4 rounded shadow-sm mb-5">
-    <p class="fs-5 text-secondary style-body" style="white-space: pre-wrap; line-height: 1.8;">
-      <%= @diary.body %>
-    </p>
-  </div>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="mb-4 border-bottom pb-3">
+      <%# 1. タイトルを表示 %>
+      <h1 class="fw-bold text-dark mb-1"><%= @diary.title %></h1>
+      
+      <%# 2. 日付と曜日を表示 %>
+      <div class="text-muted small d-flex align-items-center gap-2">
+        <span>
+          <% days = ["日", "月", "火", "水", "木", "金", "土"] %>
+          <%= @diary.created_at.strftime("%Y年%m月%d日") %> 
+          (<%= days[@diary.created_at.wday] %>)
+        </span>
+      </div>
+    </div>
 
-  <div class="d-flex gap-2">
-    <%= link_to "編集する", edit_diary_path(@diary), class: "btn btn-warning px-4 shadow-sm" %>
-    <%= link_to "一覧に戻る", diaries_path, class: "btn btn-light px-4 border" %>
-    <div class="ms-auto">
-      <%= link_to "削除", @diary, data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn btn-link text-danger text-decoration-none" %>
+    <%# 3. ここが重要：日記の内容（body）を表示するカード部分 %>
+    <div class="card shadow-sm border-0 rounded-3 mb-5">
+      <div class="card-body p-4">
+        <div style="white-space: pre-wrap; line-height: 1.8;" class="text-secondary">
+          <%# ここで登録した内容を呼び出しています %>
+          <%= @diary.body %>
+        </div>
+      </div>
+    </div>
+
+    <%# 4. ボタン類 %>
+    <div class="d-flex justify-content-between align-items-center border-top pt-4">
+      <%= link_to diaries_path, class: "btn btn-link text-decoration-none text-secondary ps-0" do %>
+        ← 一覧に戻る
+      <% end %>
+      
+      <div class="d-flex gap-2">
+        <%= link_to "編集する", edit_diary_path(@diary), class: "btn btn-outline-primary px-4" %>
+        <%= button_to "削除する", @diary, method: :delete, class: "btn btn-outline-danger", data: { turbo_confirm: "本当に削除しますか？" } %>
+      </div>
     </div>
   </div>
 </div>

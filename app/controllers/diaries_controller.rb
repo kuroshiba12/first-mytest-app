@@ -25,7 +25,8 @@ class DiariesController < ApplicationController
 
     respond_to do |format|
       if @diary.save
-        format.html { redirect_to @diary, notice: "Diary was successfully created." }
+        # @diary ではなく diaries_path に変更（一覧画面へ戻る）
+        format.html { redirect_to diaries_path, notice: "日記が正しく登録されました。" }
         format.json { render :show, status: :created, location: @diary }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,8 @@ class DiariesController < ApplicationController
   def update
     respond_to do |format|
       if @diary.update(diary_params)
-        format.html { redirect_to @diary, notice: "Diary was successfully updated.", status: :see_other }
+        # @diary ではなく diaries_path に変更（一覧画面へ戻る）
+        format.html { redirect_to diaries_path, notice: "日記が更新されました。", status: :see_other }
         format.json { render :show, status: :ok, location: @diary }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +54,7 @@ class DiariesController < ApplicationController
     @diary.destroy!
 
     respond_to do |format|
-      format.html { redirect_to diaries_path, notice: "Diary was successfully destroyed.", status: :see_other }
+      format.html { redirect_to diaries_path, notice: "日記が削除されました。", status: :see_other }
       format.json { head :no_content }
     end
   end
