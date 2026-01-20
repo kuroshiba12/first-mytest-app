@@ -1,0 +1,27 @@
+<%= form_with(model: diary) do |form| %>
+  <% if diary.errors.any? %>
+    <div class="alert alert-danger shadow-sm border-0 mb-4">
+      <h5 class="alert-heading fw-bold"><%= diary.errors.count %>件のエラーがあります</h5>
+      <ul class="mb-0">
+        <% diary.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-4">
+    <%= form.label :title, "タイトル", class: "form-label fw-bold" %>
+    <%= form.text_field :title, class: "form-control form-control-lg border-2", placeholder: "どんな一日でしたか？" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :body, "内容", class: "form-label fw-bold" %>
+    <%= form.text_area :body, class: "form-control border-2", rows: 10, placeholder: "今日の出来事を詳しく書きましょう..." %>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mt-5 pt-3 border-top">
+    <%= link_to "キャンセル", diaries_path, class: "text-decoration-none text-secondary fw-bold" %>
+    <%= form.submit "日記を公開する", class: "btn btn-primary btn-lg px-5 shadow" %>
+  </div>
+<% end %>

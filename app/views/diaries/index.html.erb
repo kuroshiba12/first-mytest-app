@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1 class="h2 text-dark fw-bold mb-0">My Diaries</h1>
+    <p class="text-muted small">日々の記録を残しましょう</p>
+  </div>
+  <%= link_to new_diary_path, class: "btn btn-primary shadow-sm d-flex align-items-center gap-2" do %>
+    <span>新規投稿</span>
+  <% end %>
+</div>
+
+<div class="table-responsive shadow-sm rounded">
+  <table class="table table-hover align-middle bg-white mb-0">
+    <thead class="table-light">
+      <tr>
+        <th style="width: 25%" class="ps-4">タイトル</th>
+        <th style="width: 45%">内容</th>
+        <th style="width: 30%" class="text-center">アクション</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @diaries.any? %>
+        <% @diaries.each do |diary| %>
+          <tr>
+            <td class="fw-bold ps-4 text-primary"><%= diary.title %></td>
+            <td class="text-secondary text-truncate" style="max-width: 250px;">
+              <%= diary.body %>
+            </td>
+            <td class="text-center">
+              <div class="btn-group" role="group">
+                <%= link_to "表示", diary, class: "btn btn-outline-primary btn-sm px-3" %>
+                <%= link_to "編集", edit_diary_path(diary), class: "btn btn-outline-secondary btn-sm px-3" %>
+                <%= link_to "削除", diary, data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn btn-outline-danger btn-sm px-3" %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="3" class="text-center py-5 text-muted">
+            日記がまだありません。最初の投稿をしてみましょう！
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

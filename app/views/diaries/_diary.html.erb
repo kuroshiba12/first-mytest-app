@@ -1,0 +1,20 @@
+<div id="<%= dom_id diary %>" class="mb-4">
+  <div class="mb-2">
+    <strong class="text-dark">タイトル:</strong>
+    <span class="ms-2"><%= diary.title %></span>
+  </div>
+
+  <div class="mb-3">
+    <strong class="text-dark">本文:</strong>
+    <div class="mt-1 p-3 bg-light rounded text-secondary" style="white-space: pre-wrap;">
+      <%= diary.body %>
+    </div>
+  </div>
+
+  <% # 「詳細画面」以外で表示されている時だけ、リンクを表示する設定 %>
+  <% if action_name != "show" %>
+    <div class="mt-2">
+      <%= link_to "詳細を表示", diary, class: "text-primary text-decoration-none fw-bold me-3" %>
+    </div>
+  <% end %>
+</div>
